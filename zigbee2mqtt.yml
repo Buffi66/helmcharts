@@ -1,0 +1,3 @@
+# helm repo add koenkk https://github.com/Koenkk/zigbee2mqtt
+# helm repo update
+# helm upgrade -f helmvalues/zigbee2mqtt.yaml zigbee2mqtt Koenkk/zigbee2mqtt -n zigbee2mqtt -i --create-namespace

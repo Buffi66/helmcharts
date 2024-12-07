@@ -1,0 +1,8 @@
+# helm repo add mojo2600 https://mojo2600.github.io/pihole-kubernetes/
+# helm repo update
+# helm upgrade -f helmvalues/pihole.yaml pihole mojo2600/pihole -n pihole -i --create-namespace
+serviceWeb:
+  type: LoadBalancer
+  loadBalancerIP: "192.168.178.18"
+persistentVolumeClaim:
+  enabled: true

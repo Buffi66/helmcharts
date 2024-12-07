@@ -1,0 +1,21 @@
+# helm repo add k8s-at-home https://k8s-at-home.com/charts/
+# helm repo update
+# helm upgrade -f helmvalues/homeassistant.yaml home-assistant --version 13.2.0 k8s-at-home/home-assistant -n homeassistant -i
+image:
+  repository: homeassistant/home-assistant
+  tag: "2024.11.3"
+service:
+  main:
+    type: LoadBalancer
+hostNetwork: true
+persistence:
+  config:
+    enabled: true
+  usb:
+    enabled: true
+    type: hostPath
+    hostPath: /dev/ttyUSB0
+securityContext:
+  privileged: true
+env:
+  TZ: Europe/Berlin
